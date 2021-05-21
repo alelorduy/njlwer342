@@ -13,6 +13,7 @@ function Tasks() {
   const sendNewTask = (event) => {
     event.preventDefault();
     setTaskList([...taskList, newTask]);
+    setNewTask("");
   };
 
   return (
@@ -30,6 +31,7 @@ function Tasks() {
             type="text"
             id="new-task"
             placeholder="Ingresa una tarea y oprime Enter"
+            onfocus="if(this.value == 'value') { this.value = ''; }"
             onChange={(event) => setNewTask(event.target.value)}
           />
         </form>
